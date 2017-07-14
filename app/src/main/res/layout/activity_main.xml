@@ -5,13 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.megahed.zcsf.MainActivity">
-<TextView
+<RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Test"/>
+    android:weightSum="5"
+    >
+
+    <ImageView
+        android:id="@+id/upperbar"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:background="?android:attr/colorPressedHighlight" />
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        android:textSize="50sp"/>
+        android:id="@+id/newsbar"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_below="@id/upperbar"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Test Text"
+        android:background="@color/colorAccent"/>
+    <LinearLayout
+        android:id="@+id/linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/newsbar"
+        android:weightSum="2"
+        tools:ignore="DisableBaselineAlignment"
+        android:layout_above="@id/buttonsbg"
+      >
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:id="@+id/happeningnowRL"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/happeningnowtitle"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:text="Happening Now"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:background="@android:color/holo_red_light"/>
+            <ListView
+                android:id="@+id/happeningnow"
+                android:layout_below="@id/happeningnowtitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></ListView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/contenttitle"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:gravity="center"
+                android:text="Content"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:background="@android:color/holo_blue_dark"/>
+            <ListView
+                android:id="@+id/content"
+                android:layout_below="@id/contenttitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></ListView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+<ImageView
+    android:id="@+id/buttonsbg"
+    android:layout_width="match_parent"
+    android:layout_height="50sp"
+    android:layout_alignParentBottom="true"
+    android:background="?android:attr/colorPressedHighlight"/>
+</RelativeLayout>
+
+
 </android.support.constraint.ConstraintLayout>
